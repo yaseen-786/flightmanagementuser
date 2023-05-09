@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row text-center">
+        <div class="imgcontainer">
+            <img src="../../assets/profile.png" alt="">
+        </div>
+        <form #reg="ngForm" (ngSubmit)="submit(reg)">
+            <!-- <img src="/src/assets/images/profile.png" alt=""> -->
+            <h1 class="text-center"> Customer Registration</h1>
+            <mat-form-field appearance="outline">
+                <mat-label> Name</mat-label>
+                <input matInput name="name" placeholder="Enter your name" ngModel>
+            </mat-form-field><br>
+            <mat-form-field appearance="outline">
+                <mat-label>Username</mat-label>
+                <input matInput name="username" placeholder="Enter your username" ngModel>
+            </mat-form-field><br>
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput name="password" placeholder="Enter your password" ngModel>
+            </mat-form-field><br>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input type= "email"matInput name="email" placeholder="Enter your email" ngModel>
+            </mat-form-field><br>
+            <mat-form-field appearance="outline">
+                <mat-label>Phone</mat-label>
+                <input matInput name="phone" type="number" placeholder="Enter your phone" ngModel>
+            </mat-form-field>
+            <br>
+            <button mat-raised-button color="primary" type="submit">Register</button>
+        </form>
+        <div>
+
+            <!-- <h2>{{sname1}} Data Added Sucessfully</h2> -->
+        </div>
+    </div>
+
+</div>

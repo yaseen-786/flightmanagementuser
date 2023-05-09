@@ -1,0 +1,60 @@
+<div class="booking">
+<div class="row">
+  <form #reg="ngForm" (ngSubmit)="submit(reg)">
+  <mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>Source Location</mat-card-title>
+        <mat-card-subtitle>select the source location</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+
+        <div class="container text-center">
+          <mat-form-field>
+            <mat-label>Select Source location</mat-label>
+            <mat-select [(value)]="sourcelocation">
+              <mat-option *ngFor="let option of source" [value]="option" name="destination" >{{ option }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+    </mat-card-content>
+</mat-card>
+<mat-card class="example-card">
+  <mat-card-header>
+      <mat-card-title>Destination Location</mat-card-title>
+      <mat-card-subtitle>select the destination location</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+      <div class="container text-center">
+        <mat-form-field>
+          <mat-label>Select an destination</mat-label>
+          <mat-select  [(value)]="destinationlocation">
+            <mat-option *ngFor="let option of destination" [value]="option"  name="souce" ngModel>{{ option }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+  </mat-card-content>
+</mat-card>
+<mat-card class="example-card">
+  <mat-card-header>
+      <mat-card-title>No of Tickets</mat-card-title>
+      <mat-card-subtitle>select the number of tickets</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+      <div class="container text-center">
+        <mat-form-field>
+          <mat-label>Select NoofTicket</mat-label>
+          <mat-select  [(value)]="noofticket">
+            <mat-option *ngFor="let option of nooftickets" [value]="option"  name="souce" ngModel>{{ option }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+  </mat-card-content>
+</mat-card>
+
+
+  <button mat-raised-button color="warn" type="submit">SearchFlight</button>
+</form>
+</div>
+
+  </div>
+  

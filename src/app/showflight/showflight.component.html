@@ -1,0 +1,30 @@
+    <h1 class="text-center">Available Flights </h1>
+
+    <table>
+        <thead>
+          <tr>
+            
+            <th>Name</th>
+            <th>SOURCE</th>
+            <th>DESTINATION</th>
+            <th>DATE</th>
+            <th>PRICE</th>
+            <th>DURATION</th>
+            <th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data">
+
+            <td>{{ item.name }}</td>
+            <td>{{ item.source }}</td>
+            <td>{{ item.destination }}</td>
+            <td>{{ item.date }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.duration }}</td>
+            <td> <button mat-raised-button color="warn" (click)="getItemData(item)">Book</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+      

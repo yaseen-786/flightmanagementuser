@@ -1,0 +1,27 @@
+<h1 class="text-center">Customer Bookings</h1>
+
+    <table>
+
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>FLIGHTNAME</th>
+            <th>SOURCE</th>
+            <th>DESTINATION</th>
+            <th>DATE</th>
+            <th>QUANTITY</th>
+            <th>AMOUNT</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of booking">
+            <td>{{ item.bookid }}</td>
+            <td>{{ item.flight.name }}</td>
+            <td>{{ item.flight.source }}</td>
+            <td>{{ item.flight.destination }}</td>
+            <td>{{ item.flight.date }}</td>
+            <td>{{ item.noofticket }}</td>
+            <td>{{ item.amount }}</td>
+          </tr>
+        </tbody>
+      </table>

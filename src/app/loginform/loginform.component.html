@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row text-center">
+        <div class="imgcontainer">
+            <img src="../../assets/profile.png" alt="">
+        </div>
+        <form #reg="ngForm" (ngSubmit)="submit(reg)">
+            <!-- <img src="/src/assets/images/profile.png" alt=""> -->
+            <h1 class="text-center"> Customer Login</h1>
+            <mat-form-field appearance="outline">
+                <mat-label>Username</mat-label>
+                <input matInput name="username" placeholder="Enter your username" ngModel>
+            </mat-form-field><br>
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput name="password" placeholder="Enter your password" ngModel>
+            </mat-form-field><br>
+            
+            <button mat-raised-button color="primary" type="submit">Login</button>
+        </form>
+        <div>
+
+            <!-- <h2>{{sname1}} Data Added Sucessfully</h2> -->
+        </div>
+    </div>
+
+</div>

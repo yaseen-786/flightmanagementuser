@@ -1,0 +1,53 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/* .image{
+    height: auto;
+    width: 100%;
+} */
+/* .container {
+    position: relative;
+    width: 100%;
+    height: auto;
+  } */
+  
+  .image-text {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+  }
+
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .flat{
+    height: 550px;
+    width: 100%;
+    /* background-color: red; */
+    background-image: url("../../assets/images/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  /* img{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 110%;
+    width: 100%;
+  } */
+
+
+  h1{
+    font-size: 60px;
+  }
+
+  p{
+    font-size: 25px;
+    /* display: inline-block; */
+    width: 1000px;
+    /* background-color: red; */
+  }
