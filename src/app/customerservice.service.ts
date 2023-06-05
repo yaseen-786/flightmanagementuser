@@ -1,6 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+
+function _window() : any {
+  // return the global native browser window object
+  return window;
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -9,15 +14,33 @@ export class CustomerserviceService {
   userdata:any;
   flightdata:any;
   flight:any;
-  noft:any
-  constructor(private http:HttpClient) { }
+  noft:any;
+  order:any;
+  isloggedin:boolean = false;
+  islog:any;
+  flightcancel:any
+  bookingid:String=""
+  constructor(private http:HttpClient ) { 
+    //this.isloggedin = false;
+  }
+
+  get nativeWindow() : any {
+    return _window();
+ }
+
+ loggedIn(){
+  return this.isloggedin
+ }
 
   registerCustomer(input:any){
     return this.http.post("http://localhost:8082/users/customerregister",input);
   }
+  
 
   validateCustomer(input : any)
 {
+  //console.log(this.isloggedin)
+  
   return this.http.post("http://localhost:8082/users/validatecustomer",input)
 }
 
@@ -44,7 +67,10 @@ bookflight(cid:number,fid:number,input:any){
 getbookingofcustomer(){
   return this.http.get("http://localhost:8082/booking/"+this.userdata.custid)
 }
-cancelbooking(id:number){
-  return this.http.delete("http://localhost:8082/cancelflight/"+id)
+cancelbooking(id:number,fid:number,not:number){
+  return this.http.delete("http://localhost:8082/cancelflight/"+id+"/"+fid+"/"+not)
+}
+sendingpaymentdata(input:any){
+  return this.http.post("http://localhost:8082/book",input)
 }
 }

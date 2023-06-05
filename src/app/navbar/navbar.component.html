@@ -6,5 +6,5 @@
     <span class="example-spacer"></span>
     <button *ngIf="isloggedin" mat-button routerLink="/login">Log-in</button>
     <button *ngIf="isregistered" mat-button routerLink="/register">Register</button>
-    <button  *ngIf="islogout" mat-button routerLink="/customer">Log-Out</button>
+    <button  *ngIf="islogout"  mat-button (click)="logout()">Log-Out</button>
 </mat-toolbar>

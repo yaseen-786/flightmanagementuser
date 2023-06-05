@@ -14,14 +14,16 @@ export class CancelbookingComponent implements OnInit {
   constructor(private stuins:CustomerserviceService,private snac:MatSnackBar,private route:Router){}
     ngOnInit(): void {
       this.stuins.getbookingofcustomer().subscribe((data)=>{
-          console.log(data)
+          //console.log(data)
           this.booking = data
       })
     }
     getItemData(item:any){
-      console.log(item);
-      this.stuins.cancelbooking(item.bookid).subscribe((data)=>{
-          console.log(data)
+      console.log(item)
+      console.log(item.flight.flightid);
+      this.stuins.cancelbooking(item.bookid,item.flight.flightid,item.noofticket).subscribe((data)=>{
+          console.log(item)
+          //this.stuins.flightcancel = data
 
       })
       this.snac.open('Flight Canceled Sucessfull!!!', 'Close', {

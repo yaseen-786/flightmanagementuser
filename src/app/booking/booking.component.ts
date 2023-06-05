@@ -25,13 +25,16 @@ constructor(private stuins:CustomerserviceService,private route:Router){}
       this.destination=data
     })
   }
+  if(){
+
+  }
   submit(reg:any){
 
     console.log(this.sourcelocation)
     console.log(this.destinationlocation)
     console.log(this.noofticket)
     this.stuins.noft=this.noofticket
-    this.stuins.getSelectedFlight(this.sourcelocation,this.destinationlocation).subscribe((data)=>{
+    this.stuins.getSelectedFlight(this.sourcelocation,this.destinationlocation).subscribe((data: any)=>{
         console.log(data)
         this.stuins.flightdata = data
         this.route.navigate(['/showflight'])

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Route, Router } from '@angular/router';
+import { CustomerserviceService } from '../customerservice.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +11,7 @@ export class NavbarComponent implements OnInit{
   isloggedin:boolean = true;
   islogout:boolean = false;
   isregistered:boolean = true;
-  constructor(private router:Router){}
+  constructor(private router:Router,private serv:CustomerserviceService){}
   ngOnInit() {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
@@ -72,5 +73,13 @@ export class NavbarComponent implements OnInit{
 
       }
     });
+  }
+  logout(){
+    // this.serv.isloggedin=false;
+    // this.router.navigate(['/customer'])
+    this.serv.isloggedin=false;
+   // localStorage.setItem('isloggedin',this.serv.isloggedin)
+    this.router.navigate(['/customer'])
+
   }
 }

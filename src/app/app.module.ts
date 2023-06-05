@@ -27,6 +27,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { ShowflightComponent } from './showflight/showflight.component';
 import { BookhistoryComponent } from './bookhistory/bookhistory.component';
 import { CancelbookingComponent } from './cancelbooking/cancelbooking.component';
+import { PaymentComponent } from './payment/payment.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { CustomerserviceService } from './customerservice.service';
+import { GuardGuard } from './guard.guard';
+import { CanActivateFn } from '@angular/router';
+import { LoggedinGuard } from './loggedin.guard';
 //import { MatIconRegistry } from '@angular/material/icon';
 @NgModule({
   declarations: [
@@ -41,6 +47,9 @@ import { CancelbookingComponent } from './cancelbooking/cancelbooking.component'
     ShowflightComponent,
     BookhistoryComponent,
     CancelbookingComponent,
+    PaymentComponent,
+    PagenotfoundComponent,
+    
     
     
   ],
@@ -58,9 +67,11 @@ import { CancelbookingComponent } from './cancelbooking/cancelbooking.component'
     HttpClientModule,
     BrowserAnimationsModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
+    
   ],
-  providers: [],
+  providers: [CustomerserviceService,GuardGuard,LoggedinGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
