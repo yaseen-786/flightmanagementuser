@@ -12,26 +12,26 @@ export class GuardGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean{
       const log = this.serv.loggedIn()
+      
       if(!this.serv.loggedIn()){
-        console.log(log);
-        
-      //console.log(localStorage.getItem('isloggedin'))
+        console.log("inside >>"+log);
+
       this.route.navigate(['/login'])
      // console.log(state,route.url)
      console.log(ActivatedRouteSnapshot.caller);
 
      return false;
     }
-    else{
-      console.log(log);
+    // else{
+    //   console.log(log);
       
-      //console.log(ActivatedRouteSnapshot);
+    //   //console.log(ActivatedRouteSnapshot);
       
-      //console.log(state,route.url)
-      return true
-    }
+    //   //console.log(state,route.url)
+    //   return true
+    // }
     
-      
+      return true;
   }
   
 }

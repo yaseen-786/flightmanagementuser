@@ -16,6 +16,6 @@ export class HomepageComponent implements OnInit {
     
   }
 updatedata(){
-  this.route.navigate(['/update'])
+  this.route.navigate(['/login'])
 }
 }

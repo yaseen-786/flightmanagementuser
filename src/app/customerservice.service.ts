@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
+import {payment } from 'src/app/showflight/showflight.component'
 
 
 function _window() : any {
@@ -19,7 +21,8 @@ export class CustomerserviceService {
   isloggedin:boolean = false;
   islog:any;
   flightcancel:any
-  bookingid:String=""
+  // bookingid:payment | undefined;
+  bookingid = new Subject<payment>();
   constructor(private http:HttpClient ) { 
     //this.isloggedin = false;
   }
@@ -58,8 +61,8 @@ getSource(){
 getDestination(){
   return this.http.get("http://localhost:8082/getalldestinationlocation")
 }
-getSelectedFlight(source:String,destination:String){
-  return this.http.get("http://localhost:8082/getdetails/"+source+"/"+destination)
+getSelectedFlight(source:String,destination:String,date:String){
+  return this.http.get("http://localhost:8082/getdetails/"+source+"/"+destination+"/"+date)
 }
 bookflight(cid:number,fid:number,input:any){
   return this.http.post("http://localhost:8082/bookflight/"+cid+"/"+fid,input)

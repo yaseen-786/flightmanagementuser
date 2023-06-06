@@ -15,6 +15,8 @@ export class NavbarComponent implements OnInit{
   ngOnInit() {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
+        
+
         if (event.url == '/register') {
           this.isloggedin = true;
           this.isregistered = false;
@@ -69,7 +71,22 @@ export class NavbarComponent implements OnInit{
           this.isloggedin = false;
           this.isregistered = false;
           this.islogout= true;
+        }else if (event.url == '/booking') {
+          // this.showLoginButton = true;
+          // this.showLogoutButton = false;
+          this.isloggedin = false;
+          this.isregistered = false;
+          this.islogout= true;
         }
+        else if (event.url == '**') {
+          // this.showLoginButton = true;
+          // this.showLogoutButton = false;
+          this.isloggedin = false;
+          this.isregistered = false;
+          this.islogout= true;
+        }
+        
+
 
       }
     });

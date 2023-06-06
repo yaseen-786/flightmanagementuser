@@ -10,6 +10,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
 //import { HttpClientModule } from '@angular/common/http';
 import { RegisterformComponent } from './registerform/registerform.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+//import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
 
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCardModule} from '@angular/material/card';
@@ -33,6 +36,7 @@ import { CustomerserviceService } from './customerservice.service';
 import { GuardGuard } from './guard.guard';
 import { CanActivateFn } from '@angular/router';
 import { LoggedinGuard } from './loggedin.guard';
+import { DatePipe } from '@angular/common';
 //import { MatIconRegistry } from '@angular/material/icon';
 @NgModule({
   declarations: [
@@ -68,10 +72,12 @@ import { LoggedinGuard } from './loggedin.guard';
     BrowserAnimationsModule,
     MatSelectModule,
     ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
     
     
   ],
-  providers: [CustomerserviceService,GuardGuard,LoggedinGuard],
+  providers: [CustomerserviceService,GuardGuard,LoggedinGuard,DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -19,6 +19,7 @@ export class CancelbookingComponent implements OnInit {
       })
     }
     getItemData(item:any){
+      alert("By clicking ok you will be canceling the flight")
       console.log(item)
       console.log(item.flight.flightid);
       this.stuins.cancelbooking(item.bookid,item.flight.flightid,item.noofticket).subscribe((data)=>{
