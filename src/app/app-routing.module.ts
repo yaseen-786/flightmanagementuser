@@ -32,16 +32,16 @@ const routes: Routes = [
   },
   {
     path:'login',
-    canActivate:[LoggedinGuard],
+    //canActivate:[LoggedinGuard],
     component:LoginformComponent
   },
   {
     path:'homepage',
-    //canActivate:[GuardGuard],
+    canActivate:[GuardGuard],
     component:HomepageComponent
   },{
     path:'booking',
-    //canActivate:[GuardGuard],
+    canActivate:[GuardGuard],
     component:BookingComponent
   },
   {
