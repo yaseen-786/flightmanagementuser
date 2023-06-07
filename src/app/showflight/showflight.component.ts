@@ -118,7 +118,7 @@ export class ShowflightComponent implements OnInit {
     // this.stuins.sendingpaymentdata(this.order).subscribe((flag)=>{
     //     console.log(flag)
     //   })
-    this.route.navigate(["payment"])
+    this.route.navigate(["homepage"])
 
     //console.log(this.stuins.bookingid)
     // let rzp = this.stuins.nativeWindow.Razorpay(this.option)
