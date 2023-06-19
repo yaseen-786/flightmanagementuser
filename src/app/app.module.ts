@@ -37,6 +37,7 @@ import { GuardGuard } from './guard.guard';
 import { CanActivateFn } from '@angular/router';
 import { LoggedinGuard } from './loggedin.guard';
 import { DatePipe } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
 //import { MatIconRegistry } from '@angular/material/icon';
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { DatePipe } from '@angular/common';
     MatSelectModule,
     ReactiveFormsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    FlexLayoutModule
     
     
   ],
