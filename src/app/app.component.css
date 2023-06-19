@@ -1,0 +1,28 @@
+/* iPhone 5/SE */
+@media (max-width: 320px) {
+    /* CSS rules specific to iPhone 5/SE */
+    body {
+        font-size: 14px;
+      }
+  }
+  
+  /* iPhone 6/7/8 */
+  @media (min-width: 375px) and (max-width: 667px) {
+    /* CSS rules specific to iPhone 6/7/8 */
+  }
+  
+  /* iPhone X/XS/11 Pro */
+  @media (min-width: 375px) and (max-width: 812px) {
+    /* CSS rules specific to iPhone X/XS/11 Pro */
+  }
+  
+  /* iPhone XR/11 */
+  @media (min-width: 414px) and (max-width: 896px) {
+    /* CSS rules specific to iPhone XR/11 */
+  }
+  
+  /* Samsung Galaxy S8/S9/S10 */
+  @media (min-width: 360px) and (max-width: 740px) {
+    /* CSS rules specific to Samsung Galaxy S8/S9/S10 */
+  }
+  

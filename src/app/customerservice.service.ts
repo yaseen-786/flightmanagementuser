@@ -21,6 +21,7 @@ export class CustomerserviceService {
   isloggedin:boolean = false;
   islog:any;
   flightcancel:any
+  url:String = "http://localhost:8081/"
   // bookingid:payment | undefined;
   bookingid = new Subject<payment>();
   constructor(private http:HttpClient ) { 
@@ -36,7 +37,7 @@ export class CustomerserviceService {
  }
 
   registerCustomer(input:any){
-    return this.http.post("http://localhost:8082/users/customerregister",input);
+    return this.http.post(this.url+"users/customerregister",input);
   }
   
 
@@ -44,36 +45,36 @@ export class CustomerserviceService {
 {
   //console.log(this.isloggedin)
   
-  return this.http.post("http://localhost:8082/users/validatecustomer",input)
+  return this.http.post(this.url+"users/validatecustomer",input)
 }
 
 getuserData(){
   console.log(this.user);
-  return this.http.get("http://localhost:8082/users/getcust/"+this.user)
+  return this.http.get(this.url+"users/getcust/"+this.user)
 }
 updateCustomer(input:any,id:number){
-  return this.http.put("http://localhost:8082/users/customerupdate/"+id,input)
+  return this.http.put(this.url+"users/customerupdate/"+id,input)
 }
 
 getSource(){
-  return this.http.get("http://localhost:8082/getallsourcelocation")
+  return this.http.get(this.url+"getallsourcelocation")
 }
 getDestination(){
-  return this.http.get("http://localhost:8082/getalldestinationlocation")
+  return this.http.get(this.url+"getalldestinationlocation")
 }
 getSelectedFlight(source:String,destination:String,date:String){
-  return this.http.get("http://localhost:8082/getdetails/"+source+"/"+destination+"/"+date)
+  return this.http.get(this.url+"getdetails/"+source+"/"+destination+"/"+date)
 }
 bookflight(cid:number,fid:number,input:any){
-  return this.http.post("http://localhost:8082/bookflight/"+cid+"/"+fid,input)
+  return this.http.post(this.url+"bookflight/"+cid+"/"+fid,input)
 }
 getbookingofcustomer(){
-  return this.http.get("http://localhost:8082/booking/"+this.userdata.custid)
+  return this.http.get(this.url+"booking/"+this.userdata.custid)
 }
 cancelbooking(id:number,fid:number,not:number){
-  return this.http.delete("http://localhost:8082/cancelflight/"+id+"/"+fid+"/"+not)
+  return this.http.delete(this.url+"cancelflight/"+id+"/"+fid+"/"+not)
 }
 sendingpaymentdata(input:any){
-  return this.http.post("http://localhost:8082/book",input)
+  return this.http.post(this.url+"book",input)
 }
 }
