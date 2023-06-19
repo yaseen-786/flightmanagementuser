@@ -37,7 +37,7 @@ export class CustomerserviceService {
  }
 
   registerCustomer(input:any){
-    return this.http.post(`${environment.apiUrl}users/customerregister`,input);
+    return this.http.post(`${environment.apiUrl}/users/customerregister`,input);
   }
   
 
@@ -45,36 +45,36 @@ export class CustomerserviceService {
 {
   //console.log(this.isloggedin)
   
-  return this.http.post(`${environment.apiUrl}users/validatecustomer`,input)
+  return this.http.post(`${environment.apiUrl}/users/validatecustomer`,input)
 }
 
 getuserData(){
   console.log(this.user);
-  return this.http.get(`${environment.apiUrl}users/getcust/`+this.user)
+  return this.http.get(`${environment.apiUrl}/users/getcust/`+this.user)
 }
 updateCustomer(input:any,id:number){
-  return this.http.put(`${environment.apiUrl}users/customerupdate/`+id,input)
+  return this.http.put(`${environment.apiUrl}/users/customerupdate/`+id,input)
 }
 
 getSource(){
-  return this.http.get(`${environment.apiUrl}getallsourcelocation`)
+  return this.http.get(`${environment.apiUrl}/getallsourcelocation`)
 }
 getDestination(){
-  return this.http.get(`${environment.apiUrl}getalldestinationlocation`)
+  return this.http.get(`${environment.apiUrl}/getalldestinationlocation`)
 }
 getSelectedFlight(source:String,destination:String,date:String){
-  return this.http.get(`${environment.apiUrl}getdetails/`+source+"/"+destination+"/"+date)
+  return this.http.get(`${environment.apiUrl}/getdetails/`+source+"/"+destination+"/"+date)
 }
 bookflight(cid:number,fid:number,input:any){
-  return this.http.post(`${environment.apiUrl}bookflight/`+cid+"/"+fid,input)
+  return this.http.post(`${environment.apiUrl}/bookflight/`+cid+"/"+fid,input)
 }
 getbookingofcustomer(){
-  return this.http.get(`${environment.apiUrl}booking/`+this.userdata.custid)
+  return this.http.get(`${environment.apiUrl}/booking/`+this.userdata.custid)
 }
 cancelbooking(id:number,fid:number,not:number){
-  return this.http.delete(`${environment.apiUrl}cancelflight/`+id+"/"+fid+"/"+not)
+  return this.http.delete(`${environment.apiUrl}/cancelflight/`+id+"/"+fid+"/"+not)
 }
 sendingpaymentdata(input:any){
-  return this.http.post(`${environment.apiUrl}book`,input)
+  return this.http.post(`${environment.apiUrl}/book`,input)
 }
 }
